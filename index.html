@@ -25,13 +25,12 @@
 						<div class="content">
 							<div class="inner">
 								<h1>Isaac Pittel</h1>
-								<p>A fully responsive site template designed by <a href="https://html5up.net">HTML5 UP</a> and released<br />
-								for free under the <a href="https://html5up.net/license">Creative Commons</a> license.</p>
+								<p>Application Developer. AI Enthusiast. Mechanical Engineer.</p>
 							</div>
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#intro">Intro</a></li>
+								<li><a href="#intro">Resume</a></li>
 								<li><a href="#work">Work</a></li>
 								<li><a href="#about">About</a></li>
 								<li><a href="#contact">Contact</a></li>
@@ -45,13 +44,10 @@
 
 						<!-- Intro -->
 							<article id="intro">
-								<h2 class="major">Intro</h2>
-                                <div id="pdf-container">
+								<h2 class="major">Resume</h2>
+                                <div id="pdf-container">									
                                     <canvas id="pdf-canvas"></canvas>
-                                </div>
-								<!-- <span class="image main"><img src="images/pic01.jpg" alt="" /></span> -->
-								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+                                </div>																
 							</article>
 
 						<!-- Work -->
@@ -361,33 +357,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.7.107/pdf.min.js"></script>
-            <script>
-                // Set the URL of the PDF
-                const pdfUrl = './assets/pdf/Isaac_Pittel_Resume.pdf';
-            
-                const loadingTask = pdfjsLib.getDocument(pdfUrl);
-
-                loadingTask.promise.then(function(pdf) {
-                    pdf.getPage(1).then(function(page) {
-                        const container = document.getElementById('main');
-                        const containerWidth = container.offsetWidth;
-
-                        const viewport = page.getViewport({ scale: 1 });
-                        const scale = containerWidth / (viewport.width + 90); // Scale to fit the container
-                        const adjustedViewport = page.getViewport({ scale });
-
-                        const canvas = document.getElementById('pdf-canvas');
-                        const context = canvas.getContext('2d');
-                        canvas.width = adjustedViewport.width;
-                        canvas.height = adjustedViewport.height;
-
-                        page.render({
-                            canvasContext: context,
-                            viewport: adjustedViewport,
-        });
-    });
-});
-            </script>
-            
+			<script src="assets/js/pdfViewer.js"></script>            
 	</body>
 </html>
