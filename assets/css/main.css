@@ -1102,6 +1102,7 @@ input, select, textarea {
 	input[type="button"],
 	button {
 		line-height: calc(2.75rem - 2px);
+		margin-bottom: 20px;
 	}
 
 /* BG */
